@@ -18,6 +18,7 @@ export default function Deck() {
   const [openQ, setOpenQ] = useState([])
   const [cardOpen, setCardOpen] = useState()
   const [resultado, setResultado] = useState([])
+  const [step, setStep] = useState(0)
 
   function testResult(userResp) {
     setOpenQ([...openQ, cardOpen])
