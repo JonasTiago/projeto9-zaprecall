@@ -1,15 +1,21 @@
 import styled from "styled-components"
 
-export default function Footer({ testResult, numeroPerguntas, numeroResposta }) {
+export default function Footer({ testResult, numeroPerguntas, numeroResposta, step }) {
 
     return (
         <Footers>
             <Action>
-                <Error onClick={() => testResult('errada')}>Não lembrei</Error>
-                <Almost onClick={() => testResult('quase')}>Quase não lembrei</Almost>
-                <Zap onClick={() => testResult('zap')}>Zap!</Zap>
+                <Error onClick={() => testResult('errada')}
+                    disabled={step === 2 ? false : true}
+                >Não lembrei</Error>
+                <Almost onClick={() => testResult('quase')}
+                    disabled={step === 2 ? false : true}
+                >Quase não lembrei</Almost>
+                <Zap onClick={() => testResult('zap')}
+                    disabled={step === 2 ? false : true}
+                >Zap!</Zap>
             </Action>
-            <p><span>{numeroResposta <= numeroPerguntas ? numeroResposta : numeroPerguntas}</span>/<span>{numeroPerguntas}</span> CONCLUÍDOS</p>
+            <p><span>{numeroResposta}</span>/<span>{numeroPerguntas}</span> CONCLUÍDOS</p>
         </Footers>
     )
 }
@@ -40,7 +46,7 @@ const Footers = styled.div`
     }
 `
 const Button = styled.button`
-    width: 80%;
+    width: 90px;
     height: 40px;
     color: white;
     font-size: 12px;
@@ -51,9 +57,10 @@ const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Recursive', cursive;
+    
     &:hover {
-    filter: brightness(0.7)
-}
+        filter: brightness(0.99) }
 `
 const Action = styled.div`
     display: flex;

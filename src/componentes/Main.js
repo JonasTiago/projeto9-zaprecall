@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Flashcard from "./Flashcard"
 
-export default function Main({deck, openQ, setCardOpen, resultado}) {
+export default function Main({deck, openQ, setCardOpen, cardOpen, resultado, setStep}) {
     return (
         <DeckMain>
             {deck.map((flashCard, index) => <Flashcard key={index} pergunta={flashCard.Q}
@@ -9,7 +9,9 @@ export default function Main({deck, openQ, setCardOpen, resultado}) {
                 ind={index}
                 openQ={openQ}
                 setCardOpen={setCardOpen}
+                cardOpen={cardOpen}
                 resultado={resultado}
+                setStep={setStep}
             />)
             }
         </DeckMain>

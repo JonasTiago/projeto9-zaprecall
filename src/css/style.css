@@ -1,5 +1,5 @@
 /* estilos gerais da aplicação */
-
+/*
 * {
   box-sizing: border-box;
   --cor-fundo: #FB6B6B;
@@ -19,7 +19,7 @@ body {
   color: var(--preto);
   font-family: 'Recursive', sans-serif;
   /* font-family: 'Righteous', cursive; */
-}
+/*}/*
 
 .flashcard {
   width: 300px;
