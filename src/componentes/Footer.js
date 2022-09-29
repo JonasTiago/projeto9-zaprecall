@@ -1,15 +1,15 @@
 import styled from "styled-components"
 
-export default function Footer() {
+export default function Footer({testResult, numeroPerguntas, numeroResposta}) {
     
     return (
         <Footers>
             <Action>
-                <Error>Não lembrei</Error>
-                <Almost>Quase não lembrei</Almost>
-                <Zap>Zap!</Zap>
+                <Error onClick={() => testResult('errada')}>Não lembrei</Error>
+                <Almost onClick={() => testResult('quase')}>Quase não lembrei</Almost>
+                <Zap onClick={() => testResult('zap')}>Zap!</Zap>
             </Action>
-            <p><span>0</span>/<span>8</span> CONCLUÍDOS</p>
+            <p><span>{numeroResposta}</span>/<span>{numeroPerguntas}</span> CONCLUÍDOS</p>
         </Footers>
     )
 }
