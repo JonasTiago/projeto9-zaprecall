@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-export default function Footer({testResult, numeroPerguntas, numeroResposta}) {
-    
+export default function Footer({ testResult, numeroPerguntas, numeroResposta }) {
+
     return (
         <Footers>
             <Action>
@@ -9,7 +9,7 @@ export default function Footer({testResult, numeroPerguntas, numeroResposta}) {
                 <Almost onClick={() => testResult('quase')}>Quase não lembrei</Almost>
                 <Zap onClick={() => testResult('zap')}>Zap!</Zap>
             </Action>
-            <p><span>{numeroResposta}</span>/<span>{numeroPerguntas}</span> CONCLUÍDOS</p>
+            <p><span>{numeroResposta <= numeroPerguntas ? numeroResposta : numeroPerguntas}</span>/<span>{numeroPerguntas}</span> CONCLUÍDOS</p>
         </Footers>
     )
 }
@@ -33,8 +33,10 @@ const Footers = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
     p{
-        font-family:cursive;
+        font-family: 'Recursive', cursive;
+        font-weight: 400;
     }
 `
 const Button = styled.button`

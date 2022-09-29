@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
- 
+
 const GlobalStyle = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -23,9 +23,8 @@ body {
   align-items: center;
   color: var(--preto);
   font-family: 'Recursive', sans-serif;
-  background-color: var(--cor-fundo);
-
-  /* font-family: 'Righteous', cursive; */
+  background-color: var(--cor-fundo); 
+  font-family: 'Righteous', cursive;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -73,5 +72,5 @@ table {
 }
 
 `
- 
+
 export default GlobalStyle
